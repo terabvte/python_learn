@@ -1,151 +1,41 @@
 import turtle as t
 from turtle import Screen
 import random
+# import colorgram
 
 tt = t.Turtle()
 screen = Screen()
 t.colormode(255)
-# colors = [
-#     "alice blue",
-#     "antique white",
-#     "aqua",
-#     "aquamarine",
-#     "azure",
-#     "beige",
-#     "bisque",
-#     "blanched almond",
-#     "blue",
-#     "blue violet",
-#     "brown",
-#     "burlywood",
-#     "cadet blue",
-#     "chartreuse",
-#     "chocolate",
-#     "coral",
-#     "cornflower blue",
-#     "cornsilk",
-#     "crimson",
-#     "cyan",
-#     "dark blue",
-#     "dark cyan",
-#     "dark goldenrod",
-#     "dark gray",
-#     "dark green",
-#     "dark khaki",
-#     "dark magenta",
-#     "dark olive green",
-#     "dark orange",
-#     "dark orchid",
-#     "dark red",
-#     "dark salmon",
-#     "dark sea green",
-#     "dark slate blue",
-#     "dark slate gray",
-#     "dark turquoise",
-#     "dark violet",
-#     "deep pink",
-#     "deep sky blue",
-#     "dim gray",
-#     "dodger blue",
-#     "firebrick",
-#     "floral white",
-#     "forest green",
-#     "gainsboro",
-#     "ghost white",
-#     "gold",
-#     "goldenrod",
-#     "gray",
-#     "green",
-#     "green yellow",
-#     "honeydew",
-#     "hot pink",
-#     "indian red",
-#     "indigo",
-#     "ivory",
-#     "khaki",
-#     "lavender",
-#     "lavender blush",
-#     "lawn green",
-#     "lemon chiffon",
-#     "light blue",
-#     "light coral",
-#     "light cyan",
-#     "light goldenrod yellow",
-#     "light gray",
-#     "light green",
-#     "light pink",
-#     "light salmon",
-#     "light sea green",
-#     "light sky blue",
-#     "light slate gray",
-#     "light steel blue",
-#     "light yellow",
-#     "lime",
-#     "lime green",
-#     "linen",
-#     "magenta",
-#     "maroon",
-#     "medium aquamarine",
-#     "medium blue",
-#     "medium orchid",
-#     "medium purple",
-#     "medium sea green",
-#     "medium slate blue",
-#     "medium spring green",
-#     "medium turquoise",
-#     "medium violet red",
-#     "midnight blue",
-#     "mint cream",
-#     "misty rose",
-#     "moccasin",
-#     "navajo white",
-#     "navy",
-#     "old lace",
-#     "olive",
-#     "olive drab",
-#     "orange",
-#     "orange red",
-#     "orchid",
-#     "pale goldenrod",
-#     "pale green",
-#     "pale turquoise",
-#     "pale violet red",
-#     "papaya whip",
-#     "peach puff",
-#     "peru",
-#     "pink",
-#     "plum",
-#     "powder blue",
-#     "purple",
-#     "red",
-#     "rosy brown",
-#     "royal blue",
-#     "saddle brown",
-#     "salmon",
-#     "sandy brown",
-#     "sea green",
-#     "seashell",
-#     "sienna",
-#     "silver",
-#     "sky blue",
-#     "slate blue",
-#     "slate gray",
-#     "snow",
-#     "spring green",
-#     "steel blue",
-#     "tan",
-#     "teal",
-#     "thistle",
-#     "tomato",
-#     "turquoise",
-#     "violet",
-#     "wheat",
-#     "white",
-#     "white smoke",
-#     "yellow",
-#     "yellow green",
-# ]
 
+# palette = colorgram.extract("./100Days/intermediates/day-18/hirst_spots.jpeg", 25)
+# my_colors = []
+# for color in palette:
+#     my_colors.append(color.rgb)
+
+color_list = [
+    (198, 175, 119),
+    (125, 36, 23),
+    (187, 157, 50),
+    (170, 104, 56),
+    (5, 56, 83),
+    (201, 216, 205),
+    (109, 67, 85),
+    (39, 35, 34),
+    (84, 141, 61),
+    (20, 122, 175),
+    (111, 161, 176),
+    (75, 38, 48),
+    (8, 67, 47),
+    (65, 154, 134),
+    (132, 41, 43),
+    (184, 98, 81),
+    (183, 180, 181),
+    (210, 200, 108),
+    (178, 201, 186),
+    (150, 180, 170),
+    (90, 143, 158),
+    (28, 81, 59),
+]
 
 def random_color():
     r = random.randint(0, 255)
@@ -163,10 +53,10 @@ def random_color():
 #     turtle.pd()
 
 # Init (bruv) screen
-screen.bgcolor("black")
-tt.width(3)
-tt.speed(0)
-tt.color("white")
+# screen.bgcolor("black")
+# tt.width(3)
+# tt.speed(0)
+# tt.color("white")
 
 # Multi polygon challenge
 # polygons = [3, 4, 5, 6, 7, 8, 9, 10]
@@ -201,11 +91,13 @@ tt.color("white")
 #     tt.fd(30)
 #     tt.setheading(random.choice(directions))
 
-for i in range(200):
-    tt.circle(175)
-    tt.tiltangle(50)
-    tt.lt(10)
-    tt.color(random_color())
+# Spirograph
+# for i in range(200):
+#     tt.circle(175)
+#     tt.tiltangle(50)
+#     tt.lt(10)
+#     tt.color(random_color())
 
+# print(palette)
 
-screen.exitonclick()
+# screen.exitonclick()
