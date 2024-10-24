@@ -1,11 +1,12 @@
 from turtle import Turtle, Screen
 import random
-turtle = Turtle()
+
+tt = Turtle()
 screen = Screen()
 
 colors = [
     "alice blue", "antique white", "aqua", "aquamarine", "azure", "beige", 
-    "bisque", "black", "blanched almond", "blue", "blue violet", "brown", 
+    "bisque", "blanched almond", "blue", "blue violet", "brown", 
     "burlywood", "cadet blue", "chartreuse", "chocolate", "coral", 
     "cornflower blue", "cornsilk", "crimson", "cyan", "dark blue", 
     "dark cyan", "dark goldenrod", "dark gray", "dark green", "dark khaki", 
@@ -42,17 +43,18 @@ colors = [
 #     turtle.fd(10)
 #     turtle.pd()
 
-turtle.width(5)
+screen.bgcolor("black")
+tt.width(5)
 
 # Multi polygon challenge
 polygons = [3, 4, 5, 6, 7, 8, 9, 10]
 for shape in polygons:
     angle = 360 / shape
-    turtle.color(random.choice(colors))
+    tt.color(random.choice(colors))
     i = shape
     while i != 0:
-        turtle.fd(100)
-        turtle.rt(angle)
+        tt.fd(100)
+        tt.rt(angle)
         i -= 1
      
 screen.exitonclick()
