@@ -7,6 +7,22 @@ tt = t.Turtle()
 screen = Screen()
 t.colormode(255)
 
+# Resize the screen window (optional, but recommended)
+screen.setup(width=550, height=550)  # Set the width and height as needed
+
+# Get screen dimensions (this returns the width/2 and height/2)
+screen_width = screen.window_width() // 2
+screen_height = screen.window_height() // 2
+
+# # Move the turtle to the bottom-left corner
+# tt.penup()  # Lift the pen to avoid drawing a line while moving
+# tt.setposition()  # Set to the bottom-left corner
+# tt.pendown()  # Put the pen down to start drawing
+
+home_x = -screen_width + 50
+home_y = -screen_height + 50
+
+
 # palette = colorgram.extract("./100Days/intermediates/day-18/hirst_spots.jpeg", 25)
 # my_colors = []
 # for color in palette:
@@ -37,12 +53,12 @@ color_list = [
     (28, 81, 59),
 ]
 
-def random_color():
-    r = random.randint(0, 255)
-    g = random.randint(0, 255)
-    b = random.randint(0, 255)
-    colors = (r, g, b)
-    return colors
+# def random_color():
+#     r = random.randint(0, 255)
+#     g = random.randint(0, 255)
+#     b = random.randint(0, 255)
+#     colors = (r, g, b)
+#     return colors
 
 
 # Dotted line
@@ -54,8 +70,8 @@ def random_color():
 
 # Init (bruv) screen
 # screen.bgcolor("black")
-# tt.width(3)
-# tt.speed(0)
+# tt.shape("circle")
+tt.speed(0)
 # tt.color("white")
 
 # Multi polygon challenge
@@ -98,6 +114,35 @@ def random_color():
 #     tt.lt(10)
 #     tt.color(random_color())
 
-# print(palette)
+# Final challenge: 
 
-# screen.exitonclick()
+# tt.width(5)
+
+# for i in range(10):
+#     tt.pd()
+#     tt.fillcolor(random.choice(color_list))
+#     tt.begin_fill()
+#     # tt.color(random.choice(color_list))
+#     tt.circle(20)
+#     tt.end_fill
+#     tt.pu()
+#     tt.fd(50)
+
+
+for i in range(10):
+    tt.teleport(home_x, home_y)
+    for i in range(10):
+        tt.pd()
+        chosen_color = random.choice(color_list)
+        tt.fillcolor(chosen_color)
+        tt.begin_fill()
+        
+        tt.color(chosen_color)
+        
+        tt.circle(10)
+        tt.end_fill()
+        tt.pu()
+        tt.fd(50)
+    home_y += 50
+
+screen.exitonclick()
