@@ -146,12 +146,14 @@ t.colormode(255)
 #     "yellow green",
 # ]
 
+
 def random_color():
     r = random.randint(0, 255)
     g = random.randint(0, 255)
     b = random.randint(0, 255)
     colors = (r, g, b)
     return colors
+
 
 # Dotted line
 # for i in range(15):
@@ -160,10 +162,12 @@ def random_color():
 #     turtle.fd(10)
 #     turtle.pd()
 
+# Init (bruv) screen
 screen.bgcolor("black")
-tt.width(5)
+tt.width(3)
 tt.speed(0)
 tt.color("white")
+
 # Multi polygon challenge
 # polygons = [3, 4, 5, 6, 7, 8, 9, 10]
 # for shape in polygons:
@@ -174,7 +178,6 @@ tt.color("white")
 #         tt.fd(100)
 #         tt.rt(angle)
 #         i -= 1
-print(random.randint(0, 3))
 
 # My take on random walk:
 # while True:
@@ -191,12 +194,18 @@ print(random.randint(0, 3))
 #         tt.color(random.choice(colors))
 
 # Random walk solution:
-directions = [0, 90, 180, 270]
+# directions = [0, 90, 180, 270]
+
+# for i in range(200):
+#     tt.color(random_color())
+#     tt.fd(30)
+#     tt.setheading(random.choice(directions))
 
 for i in range(200):
+    tt.circle(175)
+    tt.tiltangle(50)
+    tt.lt(10)
     tt.color(random_color())
-    tt.fd(30)
-    tt.setheading(random.choice(directions))
 
 
 screen.exitonclick()
