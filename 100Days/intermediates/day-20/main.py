@@ -2,43 +2,19 @@ from turtle import Turtle, Screen
 import time
 
 screen = Screen()
+
+ # Setup window
+screen = Screen()
 screen.setup(600, 600, 650, 250)
 screen.bgcolor("black")
 screen.title("Snake Game")
+# Set it so the window updates only when .update() is called
 screen.tracer(0)
-
-
-def up():
-    snake[0].seth(90)
-
-
-def down():
-    snake[0].seth(270)
-
-
-def left():
-    snake[0].seth(0)
-
-
-def right():
-    snake[0].seth(180)
-
 
 # Step 1: Create Snake Body
 
-snake = [Turtle() for i in range(60)]
+snake = [Turtle() for i in range(3)]
 last_position = [0, 0]
-for segment in snake:
-    segment.shape("square")
-    segment.color("white")
-    segment.pu()
-    segment.shapesize(0.5, 0.5, 0.5)
-    segment.speed(1)
-    segment.goto(last_position)
-    last_position[0] -= 10
-    # start_line[1] += 45
-
-screen.update()
 
 # Step 2: Animating snake segments
 

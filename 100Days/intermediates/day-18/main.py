@@ -72,6 +72,7 @@ color_list = [
 # screen.bgcolor("black")
 # tt.shape("circle")
 tt.speed(0)
+tt.hideturtle()
 # tt.color("white")
 
 # Multi polygon challenge
