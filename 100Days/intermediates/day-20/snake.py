@@ -1,38 +1,47 @@
 # Step 4: OOP Refactoring 
 from turtle import Turtle, Screen
-import time
-
 class Snake():
 
-    def start(self):
-        screen = Screen()
-        # Initialize a range(x) list segments for the snake
-        snake = [Turtle() for i in range(3)]
-        last_position = [0, 0]
-        # For loop which initializes the segments and positions them accordingly
-        for segment in snake:
+    def __init__(self):
+        self.screen = Screen()
+        self.snake = [Turtle() for i in range(3)]
+        self.last_position = [0, 0]
+        
+        for segment in self.snake:
             segment.shape("square")
             segment.color("white")
             segment.pu()
             segment.shapesize(0.5, 0.5, 0.5)
             segment.speed(1)
-            segment.goto(last_position)
-            last_position[0] -= 10
-        screen.update()
+            segment.goto(self.last_position)
+            self.last_position[0] -= 10
+        self.screen.update()  
 
+    def move(self):
+        i = 0
+        positions = [seg.pos() for seg in self.snake]
+        for i in range(len(self.snake) - 1, 0, -1):
+            self.snake[i].goto(positions[i - 1])
+        
+        self.screen.listen()
+        self.screen.onkey(self.up, "w")
+        self.screen.onkey(self.down, "s")
+        self.screen.onkey(self.left, "a")
+        self.screen.onkey(self.right, "d")
 
-    #Step 3: Movement
+        self.snake[0].forward(10)
+
     def up(self):
-    snake[0].seth(90)
+        self.snake[0].seth(90)
 
 
     def down(self):
-    snake[0].seth(270)
+        self.snake[0].seth(270)
 
 
     def left(self):
-    snake[0].seth(0)
+        self.snake[0].seth(180)
 
 
     def right(self):
-    snake[0].seth(180)
+        self.snake[0].seth(0)
