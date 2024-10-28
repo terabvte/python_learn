@@ -15,6 +15,7 @@ class Snake():
             segment.speed(1)
             segment.goto(self.last_position)
             self.last_position[0] -= 10
+        self.head = self.snake[0]
         self.screen.update()  
 
     def move(self):
@@ -29,19 +30,19 @@ class Snake():
         self.screen.onkey(self.left, "a")
         self.screen.onkey(self.right, "d")
 
-        self.snake[0].forward(10)
+        self.head.forward(10)
 
     def up(self):
-        self.snake[0].seth(90)
+        self.head.seth(90)
 
 
     def down(self):
-        self.snake[0].seth(270)
+        self.head.seth(270)
 
 
     def left(self):
-        self.snake[0].seth(180)
+        self.head.seth(180)
 
 
     def right(self):
-        self.snake[0].seth(0)
+        self.head.seth(0)
