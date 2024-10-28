@@ -11,7 +11,7 @@ class Snake():
             segment.shape("square")
             segment.color("white")
             segment.pu()
-            segment.shapesize(0.5, 0.5, 0.5)
+            segment.shapesize(0.7, 0.7, 0.7)
             segment.speed(1)
             segment.goto(self.last_position)
             self.last_position[0] -= 10
@@ -23,12 +23,21 @@ class Snake():
         positions = [seg.pos() for seg in self.snake]
         for i in range(len(self.snake) - 1, 0, -1):
             self.snake[i].goto(positions[i - 1])
-        
+
+        # HUUUGE bug, "w" is case sensitive...
+        # thought i was going crazy        
         self.screen.listen()
-        self.screen.onkey(self.up, "w")
-        self.screen.onkey(self.down, "s")
-        self.screen.onkey(self.left, "a")
-        self.screen.onkey(self.right, "d")
+        self.screen.onkeypress(self.up, "w")
+        self.screen.onkeypress(self.down, "s")
+        self.screen.onkeypress(self.left, "a")
+        self.screen.onkeypress(self.right, "d")
+
+        # uppercase to fix case sensitive bug
+
+        self.screen.onkeypress(self.up, "W")
+        self.screen.onkeypress(self.down, "S")
+        self.screen.onkeypress(self.left, "A")
+        self.screen.onkeypress(self.right, "D")
 
         self.head.forward(10)
 
