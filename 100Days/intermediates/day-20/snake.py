@@ -4,19 +4,28 @@ class Snake():
 
     def __init__(self):
         self.screen = Screen()
-        self.snake = [Turtle() for i in range(3)]
+        self.snake = []
         self.last_position = [0, 0]
         
-        for segment in self.snake:
-            segment.shape("square")
-            segment.color("white")
-            segment.pu()
-            segment.shapesize(0.7, 0.7, 0.7)
-            segment.speed(1)
-            segment.goto(self.last_position)
+        for i in range(4):
+            self.extend()
+        
+        # self.screen.update()  
+
+    def extend(self):
+            new_segment = Turtle()
+            new_segment.shape("square")
+            new_segment.color("white")
+            new_segment.pu()
+            new_segment.shapesize(0.7, 0.7, 0.7)
+            new_segment.speed(1)
+            new_segment.goto(self.last_position)
             self.last_position[0] -= 10
-        self.head = self.snake[0]
-        self.screen.update()  
+            self.snake.append(new_segment)
+            self.head = self.snake[0]
+            self.screen.update()
+        
+
 
     def move(self):
         i = 0
@@ -40,6 +49,7 @@ class Snake():
         self.screen.onkeypress(self.right, "D")
 
         self.head.forward(10)
+    
 
     def up(self):
         self.head.seth(90)
