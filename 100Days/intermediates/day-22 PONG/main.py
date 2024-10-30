@@ -16,7 +16,7 @@ r_paddle = Paddle(R_PADDLE_POSITION)
 l_paddle = Paddle(L_PADDLE_POSITION)
 
 ball = Ball()
-
+# d
 screen.listen()
 screen.onkeypress(r_paddle.go_up, "Up")
 screen.onkeypress(r_paddle.go_down, "Down")
