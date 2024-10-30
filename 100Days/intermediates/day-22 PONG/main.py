@@ -18,6 +18,8 @@ l_paddle = Paddle(L_PADDLE_POSITION)
 
 ball = Ball()
 score = Scoreboard()
+
+
 screen.listen()
 screen.onkeypress(r_paddle.go_up, "Up")
 screen.onkeypress(r_paddle.go_down, "Down")
@@ -26,10 +28,10 @@ screen.onkeypress(l_paddle.go_down, "s")
 
 game_is_on = True
 while game_is_on:
-
+    score.update_scoreboard()
     ball.move()
     screen.update()
-    time.sleep(0.005)
+    time.sleep(0.0075)
 
     # Detect collision with TOP and BOTTOM wall
     if ball.ycor() > 285 or ball.ycor() < -285:
@@ -37,7 +39,7 @@ while game_is_on:
 
     # Detect collision with LEFT and RIGHT wall
     if ball.xcor() > 385 or ball.xcor() < -385:
-        game_is_on = False
+        ball.respawn()
 
     # Detect collision with r_paddle
     if ball.distance(r_paddle) < 50 and ball.xcor() > 325:

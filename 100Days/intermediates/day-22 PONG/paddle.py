@@ -10,12 +10,9 @@ class Paddle(Turtle):
         self.shapesize(5, 1)
         self.pu()
         self.goto(position)
-
-    # def move(self):
-    #     self.screen.listen()
-    #     self.screen.onkeypress(self.go_up, "Up")
-    #     self.screen.onkeypress(self.go_down, "Down")
-
+        
+        self.score = 0
+        
     def go_up(self):
         self.new_y = self.ycor() + 20
         self.goto(self.xcor(), self.new_y)
@@ -23,3 +20,5 @@ class Paddle(Turtle):
     def go_down(self):
         self.new_y = self.ycor() - 20
         self.goto(self.xcor(), self.new_y)
+
+    # def scoreboard(self)
