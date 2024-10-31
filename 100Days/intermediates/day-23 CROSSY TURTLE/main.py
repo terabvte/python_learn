@@ -5,10 +5,18 @@ from car_manager import CarManager
 from scoreboard import Scoreboard
 
 screen = Screen()
-screen.setup(width=600, height=600)
+screen.setup(width=600, height=600, startx=650, starty=250)
 screen.tracer(0)
+screen.listen()
+
+player = Player()
+screen.onkeypress(fun=player.move, key="space")
+
+# Movement:
+
 
 game_is_on = True
 while game_is_on:
-    time.sleep(0.1)
+
+    # time.sleep(0.1)
     screen.update()
