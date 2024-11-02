@@ -12,11 +12,31 @@ screen.listen()
 player = Player()
 screen.onkeypress(fun=player.move, key="space")
 
-# Movement:
+car_manager = CarManager()
+scoreboard = Scoreboard()
 
 
 game_is_on = True
 while game_is_on:
 
-    # time.sleep(0.1)
+    time.sleep(0.05)
     screen.update()
+    car_manager.create_car()
+    car_manager.move_car()
+
+    # If player hits car
+    for car in car_manager.all_cars:
+        if car.distance(player) < 30:
+            game_is_on = False
+            scoreboard.game_over()   
+        
+    
+
+    # If player reaches end of level
+    if player.ycor() > 285:
+        player.reset()
+        car_manager.speedy()
+        scoreboard.increment_level()
+
+
+screen.exitonclick()
