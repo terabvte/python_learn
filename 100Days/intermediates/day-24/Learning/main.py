@@ -2,5 +2,6 @@
 #     contents = FILE.read()
 #     print(contents)
 
-with open("./100Days/intermediates/day-24/new_file.txt", mode="w") as file:
-    file.write("\nNew liners.")
+with open("/home/marco/Desktop/my_file.txt") as file:
+    contents = file.read()
+    print(contents)
