@@ -18,16 +18,18 @@ with open(abso + cwd) as invited_names:
 
 # Write file
 # TODO... gotta do german, check this for reference https://chatgpt.com/c/6727bb26-3570-8006-83ed-8d453fca1d17
+# update next day: debugged and solved this in like 15 minutes. running in the morning is OP
 
 for name in names:
-    
-    with open(abso + "../Input/Letters/starting_letter.txt", mode="r") as starting_letter:
+
+    with open(
+        abso + "../Input/Letters/starting_letter.txt", mode="r"
+    ) as starting_letter:
         letter = starting_letter.read()
 
-    
     letter = letter.replace("[name]", name)
     with open(
         abso + f"./ReadyToSend/Letter_for_{name}.txt", mode="w+"
     ) as finished_letter:
-        
+
         finished_letter.write(letter)
