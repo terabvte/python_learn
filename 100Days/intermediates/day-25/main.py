@@ -14,3 +14,5 @@ with open("./100Days/intermediates/day-25/weather_data.csv") as data_file:
     temperatures.pop(0)
     temperatures = [int(value) for value in temperatures]
     print(temperatures)
+    
+    #fe
