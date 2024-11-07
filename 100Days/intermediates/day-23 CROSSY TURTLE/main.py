@@ -19,6 +19,7 @@ scoreboard = Scoreboard()
 game_is_on = True
 while game_is_on:
 
+
     time.sleep(0.05)
     screen.update()
     car_manager.create_car()
@@ -28,9 +29,9 @@ while game_is_on:
     for car in car_manager.all_cars:
         if car.distance(player) < 30:
             game_is_on = False
-            scoreboard.game_over()   
-        
-    
+            scoreboard.game_over()
+
+
 
     # If player reaches end of level
     if player.ycor() > 285:
