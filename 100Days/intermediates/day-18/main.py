@@ -8,7 +8,7 @@ screen = Screen()
 t.colormode(255)
 
 # Resize the screen window (optional, but recommended)
-screen.setup(width=550, height=550)  # Set the width and height as needed
+screen.setup(width=550, height=550, startx=650, starty=250)  # Set the width and height as needed
 
 # Get screen dimensions (this returns the width/2 and height/2)
 screen_width = screen.window_width() // 2
@@ -115,7 +115,7 @@ tt.hideturtle()
 #     tt.lt(10)
 #     tt.color(random_color())
 
-# Final challenge: 
+# Final challenge:
 
 # tt.width(5)
 
@@ -137,9 +137,9 @@ for i in range(10):
         chosen_color = random.choice(color_list)
         tt.fillcolor(chosen_color)
         tt.begin_fill()
-        
+
         tt.color(chosen_color)
-        
+
         tt.circle(10)
         tt.end_fill()
         tt.pu()
