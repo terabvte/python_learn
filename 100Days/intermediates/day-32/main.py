@@ -1,6 +1,6 @@
 # SMTP emails and such..
-# import smtplib
-
+import smtplib
+import random
 # GOOGLE_APP_PW = "embbyplbjzyiqaep"  # embb yplb jzyi qaep
 # my_email = "marcofediuc@gmail.com"
 
@@ -16,4 +16,11 @@
 import datetime as dt
 
 now = dt.datetime.now()
-print(now.month)
+wd = now.weekday()
+
+with open("./100Days/intermediates/day-32/quotes.txt") as quote:
+    quotes = [line.rstrip() for line in quote]
+
+print(random.choice(quotes))
+
+# print(wd)
