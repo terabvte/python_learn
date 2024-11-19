@@ -4,8 +4,8 @@ MY_LAT = 43.591560 # 43.591560
 MY_LON = 10.596240 # 10.596240
 API_KEY = "cens"
 
-account_sid = 'cens'
-auth_token = 'cens'
+account_sid = 'AC30988ed6a0c92db892b6525dfb869003'
+auth_token = 'a5900bee74dddf95ac7eb8188cc098ba'
 
 # print(message.sid)
 
